@@ -19,7 +19,7 @@ export function parseUsersStr(usersStr: string, config?: Partial<{
     const permissions = _permissions.join('');
 
     const menuItems = permissions.split('').map((permission, index) => {
-        if(config?.strictFormatting) {
+        if(config?.strictPermissionValues) {
             if(!['Y', 'N'].includes(permission))
                 throw new Error(`Invalid permission value. Expected permission segment to be either 'Y' or 'N', but got ${ permission } on permission segment ${ index + 1 }`);
         }
@@ -34,7 +34,7 @@ export function parseUsersStr(usersStr: string, config?: Partial<{
   });
 }
 
-type User = {
+export type User = {
     userName: string;
     menuItems: boolean[];
 }
