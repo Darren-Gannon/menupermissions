@@ -29,6 +29,10 @@ import { merge } from './merge/merge';
                 content: 'Merges the permissions of a list of users and menus into a single JSON output.'
             },
             {
+                header: 'Usage',
+                content: '$ node src/index.ts -u user1.txt user2.txt -m menu1.txt menu2.txt\n$ node src/index.ts --files user1.txt menu1.txt\n$ node src/index.ts -u user1.txt -m menu1.txt\n$ node src/index.ts user1.txt menu1.txt'
+            },
+            {
                 header: 'Options',
                 optionList: [
                     {
