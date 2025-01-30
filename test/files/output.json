@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "userName": "User1",
+      "menuItems": [
+        "Security Permissions Menu",
+        "Accounts Menu",
+        "Help Menu"
+      ]
+    },
+    {
+      "userName": "UserBob",
+      "menuItems": [
+        "Customers Menu",
+        "Profile Menu",
+        "Help Menu"
+      ]
+    },
+    {
+      "userName": "User3",
+      "menuItems": [
+        "Applications Menu",
+        "Accounts Menu",
+        "Settings Menu",
+        "Profile Menu",
+        "Help Menu"        
+      ]
+    },
+    {
+      "userName": "User4",
+      "menuItems": [
+        "Applications Menu",
+        "Security Permissions Menu",
+        "Customers Menu",
+        "Accounts Menu",
+        "Pricing Menu",
+        "Settings Menu",
+        "Orders Menu",
+        "Jobs Menu",
+        "Profile Menu",
+        "Help Menu"
+      ]
+    }
+  ]
+}
