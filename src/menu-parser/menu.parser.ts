@@ -4,7 +4,7 @@ export function parseMenusStr(menuStr: string, config?: Partial<{
     lineDelimiter: string;
     strictIndexing: boolean;
 }>): string[] {
-    const lines = menuStr.trim()
+    const lines = menuStr
         .split(config?.lineDelimiter ?? EOL)
         .filter(line => line.trim() !== ''); // Clean up empty lines
 
