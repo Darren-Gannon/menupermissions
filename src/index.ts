@@ -10,7 +10,7 @@ import { merge } from './merge/merge';
         { name: 'userfile', alias: 'u', type: String, multiple: true },
         { name: 'menufile', alias: 'm', type: String, multiple: true },
         { name: 'files', type: String, multiple: true, defaultOption: true },
-        { name: 'strict', alias: 's', type: Boolean },
+        { name: 'strict', alias: 's', type: Boolean, defaultValue: true },
         { name: 'strictMenuIndexing', type: Boolean },
         { name: 'strictUserFileFormatting', type: Boolean },
         { name: 'userLineDelimiter', type: String },
@@ -23,7 +23,7 @@ import { merge } from './merge/merge';
         { name: 'help', alias: 'h', type: Boolean },
     ], {});
 
-    if ((options.help) || Object.keys(options).length === 0) {
+    if ((options.help) || Object.keys(options).length === 1) {
         const sections = [
             {
                 header: 'Chillisoft Reverse Engineer Task',
