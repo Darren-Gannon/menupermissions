@@ -19,13 +19,8 @@ export function parseUsersStr(usersStr: string, config?: Partial<{
     const permissions = _permissions.join('');
 
     const menuItems = permissions.split('').map((permission, index) => {
-        if(config?.strictPermissionValues) {
-            if(!['Y', 'N'].includes(permission))
-                throw new Error(`Invalid permission value. Expected permission segment to be either 'Y' or 'N', but got ${ permission } on permission segment ${ index + 1 }`);
-        }
-        permission = permission.toUpperCase();
-        if(permission === 'Y') return true;
-        else if(permission === 'N') return false;
+        if(permission === 'Y' || (!config?.strictPermissionValues && permission == 'y')) return true;
+        else if(permission === 'N' || (!config?.strictPermissionValues && permission == 'n')) return false;
         else throw new Error(`Invalid permission value. Expected permission segment to be either 'Y' or 'N', but got ${ permission } on permission segment ${ index + 1 }`);
     });
 
