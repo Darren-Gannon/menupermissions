@@ -14,19 +14,18 @@
 
 
 ### Usage
+```bash
+$ node dist/menupermissions.js -u user1.txt user2.txt -m menu1.txt menu2.txt
 ```
-$ node src/menupermissions.js -u user1.txt user2.txt -m menu1.txt menu2.txt
+```bash
+$ node dist/menupermissions.js --files user1.txt menu1.txt
 ```
+```bash
+$ node dist/menupermissions.js -u user1.txt -m menu1.txt
 ```
-$ node src/menupermissions.js --files user1.txt menu1.txt
+```bash
+$ node dist/menupermissions.js user1.txt menu1.txt
 ```
-
-```
-$ node src/menupermissions.js -u user1.txt -m menu1.txt
-```
-```
-$ node src/menupermissions.js user1.txt menu1.txt
-```
-```
-$ node src/menupermissions.js -h
+```bash
+$ node dist/menupermissions.js -h
 ```
