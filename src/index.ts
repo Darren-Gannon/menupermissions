@@ -17,6 +17,7 @@ import { merge } from './merge/merge';
         { name: 'userFieldDelimiter', type: String },
         { name: 'strictUserPermissionValues', type: Boolean },
         { name: 'allowEmptyMenuItems', type: Boolean },
+        { name: 'ensureMenuItems', type: Boolean },
         { name: 'lineDelimiter', type: String },
         { name: 'menuLineDelimiter', type: String },
         { name: 'help', alias: 'h', type: Boolean },
@@ -138,14 +139,7 @@ import { merge } from './merge/merge';
             strictIndexing: options.strictMenuIndexing ?? options.strict,
             lineDelimiter: options.menuLineDelimiter ?? options.lineDelimiter
         });
-    })).then(menus => menus.reduce((acc, menu) => [...acc, ...menu], [])).then(menus => {
-        if(!options.allowEmptyMenuItems) {
-            menus.forEach((menu, index) => {
-                if(!menu) throw new Error(`Empty menu item found on menu item ${index + 1}`);
-            });
-        }
-        return menus;
-    });
+    })).then(menus => menus.reduce((acc, menu) => [...acc, ...menu], []));
 
     const usersPromise = Promise.all(userFiles.map(async file => {
         const userStr = await readFile(file, 'utf-8');
@@ -159,7 +153,10 @@ import { merge } from './merge/merge';
 
     const [menus, users] = await Promise.all([menusPromise, usersPromise]);
 
-    console.log(JSON.stringify(merge(users, menus), null, 2));
+    console.log(JSON.stringify(merge(users, menus, { 
+        allowEmptyMenuItems: options.allowEmptyMenuItems ?? options.strict,
+        ensureMenuItems: options.ensureMenuItems ?? options.strict,
+    }), null, 2));
 })().catch(err => {
     console.error(`[${ new Date().toISOString() }] Error: ${err.message}`);
     process.exit(1);
