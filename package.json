@@ -1,10 +1,10 @@
 {
   "name": "chillisoft-reverseengineer",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "menupermissions.js",
   "scripts": {
     "test": "jest --coverage",
-    "start:dev": "ts-node src/index.ts",
+    "start:dev": "ts-node src/menupermissions.ts",
     "build": "tsc"
   },
   "author": "Darren Gannon",

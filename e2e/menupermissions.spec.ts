@@ -3,7 +3,7 @@ import path from "node:path";
 import { readFile } from 'node:fs/promises';
 
 describe('End-to-end tests', () => {
-    const scriptPath = path.resolve("dist", "index.js");
+    const scriptPath = path.resolve("dist", "menupermissions.js");
 
     it('should merge the list of users with the list of permissions and match the output', async () => {
         const args = ["e2e/files/users.txt", "e2e/files/menus.txt"];
