@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "menupermissions.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage src",
+    "test:e2e": "npm run build && jest e2e",
     "start:dev": "ts-node src/menupermissions.ts",
     "build": "tsc"
   },
